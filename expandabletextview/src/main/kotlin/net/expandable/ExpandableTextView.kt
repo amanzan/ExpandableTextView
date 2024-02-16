@@ -1,18 +1,21 @@
 package net.expandable
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.text.TextUtils
 import android.text.TextUtils.TruncateAt
 import android.util.AttributeSet
 import android.view.ViewTreeObserver
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
 
+@SuppressLint("AppCompatCustomView")
 class ExpandableTextView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : AppCompatTextView(context, attrs, defStyleAttr) {
+) : TextView(context, attrs, defStyleAttr) {
 
     private var listener: OnExpandableClickListener? = null
     private var isFinishDraw: Boolean = false
